@@ -1,0 +1,2052 @@
+# Translation of Hami AI Assistant in Persian (Iran)
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Hami AI Assistant 2.0.0\n"
+"Report-Msgid-Bugs-To: https://example.com/hami-ai-assistant\n"
+"POT-Creation-Date: 2026-10-10 01:27:13+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Persian <fa@example.com>\n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: modules/class-haa-module-article-writer.php:301
+msgid "%d مقاله به صف اضافه شد. هر چند دقیقه یکی ساخته می‌شود."
+msgstr ""
+
+#: includes/class-haa-api.php:335
+msgid "Anthropic Claude"
+msgstr ""
+
+#: includes/class-haa-api.php:673
+msgid "Anthropic مدل Embedding ندارد. جستجوی معنایی با BM25 اجرا می‌شود."
+msgstr ""
+
+#: includes/class-haa-admin.php:533
+msgid "CSS سفارشی"
+msgstr ""
+
+#: includes/class-haa-api.php:334
+msgid "Google Gemini"
+msgstr ""
+
+#: includes/class-haa-content.php:139
+msgid "faq بین ۳ تا ۵ مورد باشد."
+msgstr ""
+
+#: includes/class-haa-content.php:136
+msgid "html شامل h2/h3/p/ul/li/strong باشد؛ تگ h1 ممنوع."
+msgstr ""
+
+#: includes/class-haa-content.php:137
+msgid "seo_title حداکثر ۶۰ کاراکتر، seo_description حداکثر ۱۵۵ کاراکتر."
+msgstr ""
+
+#: includes/class-haa-content.php:138
+msgid "slug فقط حروف کوچک انگلیسی و خط تیره."
+msgstr ""
+
+#: modules/class-haa-module-leads.php:326
+msgid "آخرین فعالیت"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:210
+msgid "آخرین مقاله‌های ساخته‌شده"
+msgstr ""
+
+#: includes/class-haa-api.php:808
+msgid "آدرس Base URL خالی است."
+msgstr ""
+
+#: includes/class-haa-api.php:386
+msgid "آدرس Base URL خالی است. یک ارائه‌دهنده انتخاب کنید یا آدرس رله را وارد کنید."
+msgstr ""
+
+#: includes/class-haa-api.php:993
+msgid "آدرس Endpoint یا مدل پیدا نشد. Base URL و نام مدل را بررسی کنید."
+msgstr ""
+
+#: templates/chat-widget.php:112
+msgid "آدرس ایمیل"
+msgstr ""
+
+#: includes/class-haa-admin.php:514
+msgid "آدرس سرویس (اختیاری)"
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:188
+msgid "آزمون جست‌وجو"
+msgstr ""
+
+#: includes/class-haa-util.php:280
+msgid "آلمانی"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:173
+msgid "آماده"
+msgstr ""
+
+#: includes/class-haa-api.php:530
+msgid "آنتروپیک تولید تصویر ندارد. ارائه‌دهنده دیگری انتخاب کنید."
+msgstr ""
+
+#: includes/class-haa-admin.php:532
+msgid "آیکون سفارشی"
+msgstr ""
+
+#: modules/class-haa-module-discount.php:404
+msgid "ابطال"
+msgstr ""
+
+#: includes/class-haa-api.php:900
+msgid "اتصال برقرار شد. مدل: %1$s — پاسخ در %2$d میلی‌ثانیه."
+msgstr ""
+
+#: includes/class-haa-api.php:959
+msgid ""
+"اتصال برقرار نشد. این سرویس ممکن است در ایران مسدود باشد — از رله یا پروکسی استفاده کنید."
+msgstr ""
+
+#: includes/class-haa-api.php:953
+msgid ""
+"اتصال به سرویس AI تایم‌اوت شد. تایم‌اوت را در تنظیمات بیشتر کنید یا از پروکسی استفاده نمایید."
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:26
+#: modules/class-haa-module-autopilot.php:69
+#: modules/class-haa-module-autopilot.php:96
+#: modules/class-haa-module-autopilot.php:97
+#: modules/class-haa-module-autopilot.php:127
+msgid "اتوپایلوت"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:160
+msgid "اجباری"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:156
+msgid "اجباری بودن"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:256
+msgid "اجرا بعدی"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:159
+msgid "اختیاری"
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:184
+msgid "ادامه دسته بعدی"
+msgstr ""
+
+#: hami-ai-assistant.php:135
+#: templates/chat-widget.php:118
+msgid "ارسال"
+msgstr ""
+
+#: includes/class-haa-admin.php:535
+msgid "استفاده از محتوای سایت در پاسخ"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:310
+msgid "استفاده‌شده"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:447
+#: modules/class-haa-module-product-content.php:227
+msgid "اسلگ"
+msgstr ""
+
+#: includes/class-haa-util.php:283
+msgid "اسپانیایی"
+msgstr ""
+
+#: includes/class-haa-chat.php:228
+msgid "اطلاعات سایت (فقط بر اساس همین‌ها پاسخ بده، ادعای دیگری نساز):"
+msgstr ""
+
+#: includes/class-haa-content.php:145
+msgid "اطلاعات واقعی (فقط بر اساس همین‌ها):"
+msgstr ""
+
+#: includes/class-haa-api.php:996
+msgid "اعتبار اکانت سرویس AI تمام شده است."
+msgstr ""
+
+#: modules/class-haa-module-discount.php:82
+msgid "اعتبار کد (روز)"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:256
+msgid "اعمال روی محصول"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:463
+msgid "اعمال شد: %s"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:199
+msgid "افزودن به صف"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:365
+msgid "افزودن دستی"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:323
+msgid "امتیاز"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:96
+msgid "امتیاز دادن شماره"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:98
+msgid "امتیاز نیت خرید"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:97
+msgid "امتیاز هر پیام"
+msgstr ""
+
+#: includes/class-haa-chat.php:250
+msgid ""
+"امروز تخفیف بیشتری ممکن نیست؛ لطفاً صادقانه بگو سقف تمام شده و پیشنهاد دیگری بده."
+msgstr ""
+
+#: includes/class-haa-images.php:125
+msgid "امکان نوشتن فایل موقت نیست."
+msgstr ""
+
+#: includes/class-haa-admin.php:753
+#: modules/class-haa-module-product-content.php:155
+msgid "انتخاب"
+msgstr ""
+
+#: includes/class-haa-admin.php:104
+msgid "انجام شد"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:144
+msgid "انجام‌شده"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:81
+msgid "اندازه تصویر"
+msgstr ""
+
+#: includes/class-haa-admin.php:529
+msgid "اندازه دکمه (px)"
+msgstr ""
+
+#: includes/class-haa-admin.php:527
+msgid "اندازه فونت (px)"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:243
+msgid "انصراف"
+msgstr ""
+
+#: modules/class-haa-module-discount.php:376
+msgid "انقضا"
+msgstr ""
+
+#: includes/class-haa-util.php:277
+msgid "انگلیسی"
+msgstr ""
+
+#: includes/class-haa-admin.php:543
+msgid "اگر پشت Cloudflare یا CDN هستید پر کنید."
+msgstr ""
+
+#: modules/class-haa-module-leads.php:371
+msgid "ایمیل"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:78
+msgid "ایمیل پاسخ‌دهنده"
+msgstr ""
+
+#: includes/class-haa-api.php:797
+msgid "این ارائه‌دهنده فهرست مدل ندارد. مدل را دستی وارد کنید."
+msgstr ""
+
+#: includes/class-haa-rest.php:73
+msgid "این چت فقط برای مهمان‌هاست."
+msgstr ""
+
+#: includes/class-haa-chat.php:255
+msgid "این کاربر مشخصاتش را داده:"
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:30
+msgid ""
+"ایندکس ترکیبی روی محصولات و مطالب؛ جست‌وجو را به کدهای سئو و امبدینگ‌های واقعی مجهز می‌کند."
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:233
+msgid "ایندکس پاک شد."
+msgstr ""
+
+#: templates/chat-widget.php:106
+msgid "با ارسال شماره، رضایت می‌دهید برای پیگیری سفارش با شما تماس بگیریم."
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:219
+msgid "بازسازی ایندکس شروع شد."
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:143
+msgid "بازسازی در حال اجراست:"
+msgstr ""
+
+#: modules/class-haa-module-discount.php:81
+msgid "بازه (دقیقه)"
+msgstr ""
+
+#: includes/class-haa-admin.php:539
+msgid "بازه سقف (دقیقه)"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:26
+msgid "باشگاه لید"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:82
+msgid "بالا"
+msgstr ""
+
+#: includes/class-haa-admin.php:122
+msgid "بخش نامعتبر است."
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:59
+msgid "بخش‌های ایندکس‌شده"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:232
+msgid "بدنه متن"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:242
+msgid "بدون دسته"
+msgstr ""
+
+#: includes/class-haa-chat.php:301
+msgid "بدون عنوان"
+msgstr ""
+
+#: includes/class-haa-admin.php:516
+msgid "برای جستجوی معنایی. اگر خالی باشد از همان مدل چت استفاده می‌شود."
+msgstr ""
+
+#: includes/class-haa-admin.php:515
+msgid "برای دریافت فهرست مدل‌ها از دکمه‌ی «تست اتصال» استفاده کنید."
+msgstr ""
+
+#: modules/class-haa-module-comments.php:30
+msgid ""
+"برای دیدگاه‌های تازه یک پاسخ پیش‌نویس می‌نویسد؛ هیچ‌چیز بدون تأیید شما منتشر نمی‌شود."
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:203
+msgid ""
+"برای نمایش کادر جست‌وجو در هر صفحه‌ای از %1$s استفاده کنید؛ دکمه «جست‌وجو» در کادر چت هم همین سرویس را صدا می‌زند."
+msgstr ""
+
+#: includes/class-haa-admin.php:660
+msgid ""
+"برای نگه‌داشتن مقدار فعلی، تغییرش ندهید. کلید به‌صورت رمزنگاری‌شده ذخیره می‌شود."
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:193
+msgid "برای هر مقاله یک تصویر بساز"
+msgstr ""
+
+#: templates/chat-widget.php:97
+msgid "برای پیگیری سریع‌تر مشخصاتت رو بده (اختیاری):"
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:162
+msgid "بردارها"
+msgstr ""
+
+#: includes/class-haa-api.php:728
+#: includes/class-haa-api.php:772
+msgid "برداری در پاسخ نبود."
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:171
+msgid "برچسب فیلد موبایل"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:166
+msgid "برچسب فیلد نام"
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:81
+msgid "برگه‌ها"
+msgstr ""
+
+#: templates/chat-widget.php:55
+msgid "بستن"
+msgstr ""
+
+#: includes/class-haa-util.php:307
+msgid "بلند (~۱۴۰۰ کلمه)"
+msgstr ""
+
+#: includes/class-haa-chat.php:184
+msgid "به سقف درخواست رسیده‌اید. لطفاً %d دقیقه دیگر دوباره تلاش کنید."
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:83
+msgid "به همه پرامپت‌ها اضافه می‌شود؛ مثلاً «نور طبیعی، پس‌زمینه سفید»."
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:155
+msgid "بهترین کوله پشتی برای دانشجویان\\nراهنمای خرید لپ‌تاپ در ۱۴۰۴"
+msgstr ""
+
+#: modules/class-haa-module-discount.php:193
+msgid "بیشتر از %d درصد ممکن نیست."
+msgstr ""
+
+#: modules/class-haa-module-comments.php:79
+msgid "تأییدشده"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:216
+msgid "تاریخ"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:368
+msgid "تازه‌سازی"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:366
+msgid "تایید و درج"
+msgstr ""
+
+#: modules/class-haa-module-discount.php:67
+msgid "تخفیف"
+msgstr ""
+
+#: modules/class-haa-module-discount.php:276
+msgid "تخفیف %1$d٪ صادره توسط دستیار هوشمند"
+msgstr ""
+
+#: modules/class-haa-module-discount.php:95
+#: modules/class-haa-module-discount.php:96
+#: modules/class-haa-module-discount.php:347
+msgid "تخفیف‌ها"
+msgstr ""
+
+#: includes/class-haa-util.php:279
+msgid "ترکی"
+msgstr ""
+
+#: includes/class-haa-admin.php:555
+msgid "تست اتصال"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:235
+msgid "تصویر بساز"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:421
+msgid "تصویر ساخته و به‌عنوان تصویر شاخص محصول تنظیم شد."
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:189
+#: modules/class-haa-module-autopilot.php:84
+#: modules/class-haa-module-autopilot.php:231
+msgid "تصویر شاخص"
+msgstr ""
+
+#: includes/class-haa-api.php:595
+#: includes/class-haa-api.php:637
+msgid "تصویری در پاسخ سرویس نبود."
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:92
+msgid "تعداد بخش‌های اطلاعاتی"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:214
+msgid "تعداد در هر اجرا"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:79
+msgid "تعداد لینک داخلی"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:80
+msgid "تلاش مجدد"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:192
+#: modules/class-haa-module-autopilot.php:254
+msgid "تناوب"
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:97
+msgid "تنظیمات"
+msgstr ""
+
+#: includes/class-haa-admin.php:205
+msgid "تنظیمات به حالت پیش‌فرض برگشت."
+msgstr ""
+
+#: includes/class-haa-admin.php:202
+msgid "تنظیمات وارد شد."
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:340
+msgid "تو یک نویسنده محتوای سئو برای وبلاگ یک فروشگاه اینترنتی ایرانی هستی."
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:514
+msgid ""
+"تو یک نویسنده محتوای سئو هستی. خروجی را فقط HTML معتبر برگردان؛ بدون h1، بدون کد فنس."
+msgstr ""
+
+#: includes/class-haa-content.php:133
+msgid ""
+"تو یک کارشناس سئو و محتوای فروشگاهی هستی. خروجی را فقط و فقط به‌صورت یک شیء JSON با کلیدهای زیر برگردان، بدون متن اضافه و بدون کد فنس:"
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:71
+#: includes/class-haa-admin-modules.php:59
+msgid "توضیح"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:31
+msgid ""
+"توضیح سئو، عنوان، اسلگ، سؤالات متداول و تصویر محصول — با یک کلیک و قبل از انتشار."
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:223
+msgid "توضیح متا"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:284
+msgid "توقف"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:80
+#: modules/class-haa-module-product-content.php:263
+msgid "تولید تصویر"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:392
+msgid "تولید تصویر در تنظیمات خاموش است."
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:44
+#: modules/class-haa-module-autopilot.php:152
+msgid "توکن امروز"
+msgstr ""
+
+#: includes/class-haa-rest.php:132
+msgid "توکن چت منقضی شده است. صفحه را تازه‌سازی کنید."
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:48
+msgid "توکن ۷ روز اخیر"
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:158
+msgid "تکه‌های متن"
+msgstr ""
+
+#: includes/class-haa-admin.php:525
+msgid "تیره"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:372
+#: modules/class-haa-module-leads.php:420
+msgid "ثبت"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:523
+msgid "ثبت دستی توسط مدیر."
+msgstr ""
+
+#: includes/class-haa-admin.php:540
+msgid "ثبت گفتگوها"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:186
+msgid "جداشده با کاما؛ مثلاً کیف چرم، هدیه مردانه"
+msgstr ""
+
+#: includes/class-haa-admin-modules.php:60
+msgid "جدول‌ها"
+msgstr ""
+
+#: includes/class-haa-admin.php:285
+msgid "جستجو در دسترس نیست."
+msgstr ""
+
+#: modules/class-haa-module-leads.php:302
+msgid "جستجوی نام یا شماره"
+msgstr ""
+
+#: includes/class-haa-admin.php:288
+msgid "جستجوی هوشمند غیرفعال است."
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:192
+#: modules/class-haa-module-semantic-search.php:260
+#: modules/class-haa-module-semantic-search.php:262
+msgid "جست‌وجو"
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:25
+#: modules/class-haa-module-semantic-search.php:65
+#: modules/class-haa-module-semantic-search.php:92
+#: modules/class-haa-module-semantic-search.php:93
+#: modules/class-haa-module-semantic-search.php:133
+msgid "جست‌وجوی هوشمند"
+msgstr ""
+
+#: includes/class-haa-content.php:152
+msgid "حالا محتوا را بنویس."
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:117
+msgid "حالت خارج از ساعات کاری"
+msgstr ""
+
+#: includes/class-haa-admin.php:525
+msgid "حالت رنگی"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:78
+msgid "حجم دسته (هر کلیک)"
+msgstr ""
+
+#: modules/class-haa-module-discount.php:83
+msgid "حداقل مبلغ سبد (۰ = بدون حد)"
+msgstr ""
+
+#: includes/class-haa-admin.php:519
+msgid "حداکثر توکن خروجی"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:82
+msgid "حداکثر در هر اجرا"
+msgstr ""
+
+#: modules/class-haa-module-discount.php:77
+msgid "حداکثر دور چانه‌زنی"
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:75
+msgid "حداکثر نتیجه"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:85
+msgid "حداکثر نوبت‌های گفتگو"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:99
+msgid "حداکثر کاراکتر اطلاعات"
+msgstr ""
+
+#: includes/class-haa-admin.php:754
+#: modules/class-haa-module-autopilot.php:291
+#: modules/class-haa-module-comments.php:370
+#: modules/class-haa-module-leads.php:434
+msgid "حذف"
+msgstr ""
+
+#: includes/class-haa-admin.php:505
+msgid "حذف از این صفحات"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:270
+msgid "حذف پیش‌نمایش"
+msgstr ""
+
+#: includes/class-haa-util.php:293
+msgid "حرفه‌ای"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:806
+msgid "حساس قیمت"
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:84
+#: modules/class-haa-module-chatbot.php:158
+msgid "خاموش"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:100
+#: modules/class-haa-module-leads.php:312
+msgid "خروجی CSV"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:533
+msgid "خروجی CSV در تنظیمات خاموش است."
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:341
+msgid ""
+"خروجی را فقط و فقط به‌صورت HTML معتبر برگردان؛ بدون تگ h1، بدون کد فنس، بدون توضیح اضافه."
+msgstr ""
+
+#: includes/class-haa-api.php:1006
+msgid "خطای HTTP %1$d از سرویس AI. %2$s"
+msgstr ""
+
+#: includes/class-haa-api.php:964
+msgid "خطای ارتباط با سرویس AI: %s"
+msgstr ""
+
+#: includes/class-haa-api.php:962
+msgid "خطای گواهی SSL. در صورت استفاده از پروکسی داخلی، sslverify را بررسی کنید."
+msgstr ""
+
+#: modules/class-haa-module-leads.php:427
+msgid "خلاصه"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:99
+msgid "خلاصه هوشمند"
+msgstr ""
+
+#: includes/class-haa-admin.php:525
+msgid "خودکار"
+msgstr ""
+
+#: includes/class-haa-util.php:308
+msgid "خیلی بلند (~۲۲۰۰ کلمه)"
+msgstr ""
+
+#: includes/class-haa-admin.php:54
+#: includes/class-haa-admin.php:55
+msgid "داشبورد"
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:23
+msgid "داشبورد دستیار هوشمند"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:680
+msgid "داغ"
+msgstr ""
+
+#: includes/class-haa-api.php:956
+msgid ""
+"دامنه سرویس AI قابل resolve نیست. احتمالاً هاست شما دسترسی مستقیم ندارد — Base URL رله یا پروکسی تنظیم کنید."
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:76
+#: modules/class-haa-module-autopilot.php:81
+#: modules/class-haa-module-autopilot.php:223
+#: modules/class-haa-module-comments.php:79
+msgid "در انتظار بررسی"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:136
+msgid "در حال اجرا"
+msgstr ""
+
+#: includes/class-haa-admin.php:103
+msgid "در حال انجام…"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:809
+msgid "در حال موجودی"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:132
+#: modules/class-haa-module-autopilot.php:160
+msgid "در صف"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:398
+msgid "در صف تازه‌سازی قرار گرفت."
+msgstr ""
+
+#: modules/class-haa-module-discount.php:32
+msgid ""
+"در چت چانه می‌زند و در صورت توافق یک کد تخفیف واقعی ووکامرس صادر می‌کند؛ همه چیز در سقفی که خودتان تعیین کرده‌اید."
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:78
+msgid "درج لینک داخلی"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:428
+msgid "درج پاسخ ممکن نشد."
+msgstr ""
+
+#: includes/class-haa-rest.php:124
+#: modules/class-haa-module-leads.php:451
+msgid "درخواست نامعتبر بود."
+msgstr ""
+
+#: modules/class-haa-module-discount.php:374
+msgid "درصد"
+msgstr ""
+
+#: modules/class-haa-module-discount.php:187
+msgid "درصد تخفیف نامعتبر است."
+msgstr ""
+
+#: includes/class-haa-admin.php:556
+msgid "دریافت مدل‌ها"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:150
+msgid "دریافت نام و شماره در چت"
+msgstr ""
+
+#: includes/class-haa-util.php:331
+#: includes/class-haa-util.php:343
+msgid "دسترسی غیرمجاز."
+msgstr ""
+
+#: includes/class-haa-api.php:990
+msgid "دسترسی مجاز نیست. سطح اکانت یا کلید را بررسی کنید."
+msgstr ""
+
+#: includes/class-haa-admin.php:541
+msgid "دسترسی مهمان"
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:226
+msgid "دسته بعدی ایندکس شد."
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:85
+msgid "دسته پیش‌فرض (شناسه)"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:184
+msgid "دسته‌بندی"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:79
+msgid "دستور سیستمی"
+msgstr ""
+
+#: includes/class-haa-admin.php:501
+msgid "دستگاه"
+msgstr ""
+
+#: includes/class-haa-rest.php:68
+msgid "دستیار در این صفحه غیرفعال است."
+msgstr ""
+
+#: includes/class-haa-chat.php:53
+msgid "دستیار هنوز به سرویس AI متصل نشده است. لطفاً با مدیر سایت تماس بگیرید."
+msgstr ""
+
+#: includes/class-haa-admin.php:44
+#: includes/class-haa-admin.php:45
+#: includes/class-haa-admin.php:328
+msgid "دستیار هوشمند"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:32
+msgid ""
+"دستیار گفتگوی شناور که از محتوای سایت جواب می‌دهد، لید جمع می‌کند و بدون توجه به کش صفحات کار می‌کند."
+msgstr ""
+
+#: includes/class-haa-admin.php:501
+msgid "دسکتاپ"
+msgstr ""
+
+#: modules/class-haa-module-discount.php:84
+msgid "دفعات مجاز هر کد"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:322
+msgid "دما"
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:261
+msgid "دنبال چی می‌گردی؟"
+msgstr ""
+
+#: includes/class-haa-admin.php:497
+msgid "دکمه شناور"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:176
+msgid "دیدگاه اسپم یا حذف‌شده است."
+msgstr ""
+
+#: modules/class-haa-module-comments.php:221
+msgid "دیدگاه خواننده:\\n«%s»"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:172
+msgid "دیدگاه پیدا نشد."
+msgstr ""
+
+#: modules/class-haa-module-comments.php:25
+#: modules/class-haa-module-comments.php:67
+#: modules/class-haa-module-comments.php:93
+#: modules/class-haa-module-comments.php:94
+#: modules/class-haa-module-comments.php:297
+msgid "دیدگاه‌ها"
+msgstr ""
+
+#: includes/class-haa-admin.php:369
+msgid "ذخیره"
+msgstr ""
+
+#: includes/class-haa-admin.php:201
+msgid "ذخیره شد."
+msgstr ""
+
+#: includes/class-haa-admin-modules.php:112
+msgid "ذخیره ماژول‌ها"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:241
+msgid "ذخیره کمپین"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:137
+msgid "ذخیره‌ی گفتگو"
+msgstr ""
+
+#: includes/class-haa-admin.php:498
+msgid "راست"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:369
+msgid "رد"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:311
+msgid "ردشده"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:391
+#: modules/class-haa-module-comments.php:407
+#: modules/class-haa-module-comments.php:441
+msgid "ردیف پیدا نشد."
+msgstr ""
+
+#: includes/class-haa-util.php:294
+msgid "رسمی"
+msgstr ""
+
+#: includes/class-haa-admin.php:521
+msgid "رنگ اصلی"
+msgstr ""
+
+#: includes/class-haa-admin.php:522
+msgid "رنگ حباب پاسخ"
+msgstr ""
+
+#: includes/class-haa-admin.php:524
+msgid "رنگ متن"
+msgstr ""
+
+#: includes/class-haa-admin.php:523
+msgid "رنگ پس‌زمینه"
+msgstr ""
+
+#: includes/class-haa-util.php:282
+msgid "روسی"
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:82
+#: includes/class-haa-admin.php:525
+#: includes/class-haa-admin.php:688
+msgid "روشن"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:74
+msgid "زبان پیش‌فرض"
+msgstr ""
+
+#: includes/class-haa-content.php:40
+msgid "زبان:"
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:140
+msgid "زمان‌بندی شده"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:207
+msgid "زمینه:"
+msgstr ""
+
+#: includes/class-haa-seo.php:120
+#: modules/class-haa-module-product-content.php:240
+msgid "سؤالات متداول"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:80
+msgid "سؤال‌های پیشنهادی"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:93
+msgid "ساخت خودکار از چت"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:211
+msgid "ساخت پیش‌نمایش"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:342
+msgid ""
+"ساختار: یک بند مقدمه، سپس h2 برای هر بخش، فهرست بولت وقتی لازم است، و یک جمع‌بندی."
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:255
+msgid "ساخته‌شده"
+msgstr ""
+
+#: includes/class-haa-api.php:333
+msgid "سازگار با OpenAI"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:210
+msgid "ساعت اجرا"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:83
+msgid "سبک ثابت تصویر"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:682
+msgid "سرد"
+msgstr ""
+
+#: includes/class-haa-admin.php:512
+msgid "سرویس"
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:122
+#: includes/class-haa-admin.php:407
+msgid "سرویس AI"
+msgstr ""
+
+#: includes/class-haa-api.php:1004
+msgid "سرویس AI موقتاً از دسترس خارج است. بعداً دوباره تلاش کنید."
+msgstr ""
+
+#: includes/class-haa-images.php:66
+msgid "سرویس تصویر چیزی برنگرداند."
+msgstr ""
+
+#: includes/class-haa-api.php:1000
+msgid "سرویس موقتاً درخواست‌ها را محدود کرده است. چند لحظه بعد تلاش کنید."
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:78
+msgid "سقف توکن روزانه"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:480
+msgid "سقف توکن روزانه پر است."
+msgstr ""
+
+#: includes/class-haa-admin.php:538
+msgid "سقف درخواست"
+msgstr ""
+
+#: modules/class-haa-module-discount.php:78
+msgid "سقف مطلق تخفیف (٪)"
+msgstr ""
+
+#: modules/class-haa-module-discount.php:364
+msgid "سقف مطلق تخفیف: ٪%1$d — هر کد به‌صورت واقعی در ووکامرس هم ساخته می‌شود."
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:79
+msgid "سقف پست روزانه"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:485
+msgid "سقف پست روزانه پر است."
+msgstr ""
+
+#: modules/class-haa-module-discount.php:79
+msgid "سقف پیش‌فرض (٪)"
+msgstr ""
+
+#: includes/class-haa-admin.php:498
+msgid "سمت دکمه"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:225
+msgid "سه سؤال کوتاه و مرتبط با همین دیدگاه بنویس؛ هر کدام در یک خط، بدون شماره."
+msgstr ""
+
+#: templates/chat-widget.php:116
+msgid "سوالت رو بپرس…"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:80
+msgid "شخصیت و قوانین پاسخ‌دهی. کوتاه، فارسی و بدون ادعای ساختگی بنویسید."
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:170
+msgid "شروع بازسازی"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:122
+msgid "شروع ساعات کاری"
+msgstr ""
+
+#: templates/chat-widget.php:52
+msgid "شروع مجدد"
+msgstr ""
+
+#: templates/chat-widget.php:52
+msgid "شروع مجدد گفتگو"
+msgstr ""
+
+#: templates/chat-widget.php:103
+msgid "شماره موبایل"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:494
+msgid "شماره موبایل الزامی است."
+msgstr ""
+
+#: hami-ai-assistant.php:136
+msgid "شماره موبایل معتبر وارد کنید."
+msgstr ""
+
+#: modules/class-haa-module-leads.php:62
+msgid "شناسه لید نبود."
+msgstr ""
+
+#: modules/class-haa-module-discount.php:419
+msgid "شناسه محصول (۰ = کل سبد)"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:77
+msgid "شناسه نویسنده (۰ = شما)"
+msgstr ""
+
+#: modules/class-haa-module-discount.php:378
+msgid "صادرشده"
+msgstr ""
+
+#: modules/class-haa-module-discount.php:414
+msgid "صدور دستی"
+msgstr ""
+
+#: modules/class-haa-module-discount.php:420
+msgid "صدور کد"
+msgstr ""
+
+#: includes/class-haa-util.php:292
+msgid "صمیمی"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:173
+#: modules/class-haa-module-product-content.php:200
+msgid "طول"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:83
+#: modules/class-haa-module-product-content.php:76
+msgid "طول پیش‌فرض"
+msgstr ""
+
+#: includes/class-haa-content.php:42
+msgid "طول:"
+msgstr ""
+
+#: includes/class-haa-admin.php:409
+msgid "ظاهر"
+msgstr ""
+
+#: includes/class-haa-util.php:278
+msgid "عربی"
+msgstr ""
+
+#: includes/class-haa-admin.php:553
+msgid "عملیات"
+msgstr ""
+
+#: includes/class-haa-admin.php:406
+#: modules/class-haa-module-leads.php:811
+msgid "عمومی"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:214
+#: modules/class-haa-module-product-content.php:444
+msgid "عنوان"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:219
+msgid "عنوان سئو"
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:140
+msgid "غیرفعال"
+msgstr ""
+
+#: includes/class-haa-util.php:276
+msgid "فارسی"
+msgstr ""
+
+#: includes/class-haa-admin.php:499
+msgid "فاصله از پایین (px)"
+msgstr ""
+
+#: includes/class-haa-admin.php:500
+msgid "فاصله از کنار (px)"
+msgstr ""
+
+#: includes/class-haa-admin.php:203
+msgid "فایل JSON معتبر نبود."
+msgstr ""
+
+#: includes/class-haa-settings.php:1052
+msgid "فایل JSON معتبر نیست."
+msgstr ""
+
+#: includes/class-haa-util.php:281
+msgid "فرانسوی"
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:133
+#: includes/class-haa-admin-modules.php:57
+#: includes/class-haa-admin.php:496
+#: modules/class-haa-module-comments.php:76
+#: modules/class-haa-module-discount.php:76
+#: modules/class-haa-module-leads.php:92
+msgid "فعال"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:284
+msgid "فعال‌سازی"
+msgstr ""
+
+#: includes/class-haa-admin.php:504
+msgid "فقط این صفحات (خالی = همه)"
+msgstr ""
+
+#: includes/class-haa-admin.php:497
+msgid "فقط با شورت‌کد"
+msgstr ""
+
+#: includes/class-haa-admin.php:541
+msgid "فقط مهمان‌ها"
+msgstr ""
+
+#: includes/class-haa-admin.php:541
+msgid "فقط کاربران واردشده"
+msgstr ""
+
+#: includes/class-haa-util.php:296
+msgid "فنی"
+msgstr ""
+
+#: includes/class-haa-admin.php:559
+msgid "فهرست مدل‌های دریافتی:"
+msgstr ""
+
+#: includes/class-haa-admin.php:526
+msgid "فونت"
+msgstr ""
+
+#: includes/class-haa-admin.php:526
+msgid "فونت سیستم"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:309
+msgid "فیلتر"
+msgstr ""
+
+#: includes/class-haa-content.php:135
+msgid "قانون‌ها:"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:803
+msgid "قصد خرید"
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:121
+msgid "قطع"
+msgstr ""
+
+#: includes/class-haa-chat.php:243
+msgid ""
+"قوانین تخفیف: حداکثر ٪%1$d تخفیف مجاز است و فقط ٪%2$d دور چانه‌زنی دیگر مانده. اگر مشتری اصرار کرد و به توافق رسیدید، در پاسخ دقیقاً این عبارت را بنویس: [[COUPON:درصد]] (جای درصد را با عدد واقعی پر کن، بزرگ‌تر از سقف نرو). بعد از آن دیگر چانه نزن. کد تا ٪%3$d روز معتبر است."
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:162
+#: modules/class-haa-module-product-content.php:190
+msgid "لحن"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:82
+#: modules/class-haa-module-product-content.php:75
+msgid "لحن پیش‌فرض"
+msgstr ""
+
+#: includes/class-haa-content.php:41
+msgid "لحن:"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:475
+#: modules/class-haa-module-leads.php:568
+msgid "لید پیدا نشد."
+msgstr ""
+
+#: modules/class-haa-module-leads.php:83
+#: modules/class-haa-module-leads.php:111
+#: modules/class-haa-module-leads.php:112
+#: modules/class-haa-module-leads.php:278
+msgid "لیدها"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:332
+msgid "لیدی نیست."
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:347
+msgid "لینک‌های داخلی واقعی سایت (حتماً چندتایشان را طبیعی در متن بیاور):"
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:70
+#: includes/class-haa-admin-modules.php:58
+msgid "ماژول"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:151
+msgid "ماژول «باشگاه لید» باید فعال باشد."
+msgstr ""
+
+#: includes/class-haa-admin-modules.php:49
+msgid ""
+"ماژول خاموش کاملاً بارگذاری نمی‌شود: نه فایلی خوانده می‌شود، نه جدولی ساخته می‌شود و نه هکی ثبت می‌گردد."
+msgstr ""
+
+#: includes/class-haa-admin-modules.php:47
+#: includes/class-haa-admin.php:62
+#: includes/class-haa-admin.php:63
+#: includes/class-haa-admin.php:408
+msgid "ماژول‌ها"
+msgstr ""
+
+#: includes/class-haa-admin.php:206
+msgid "ماژول‌ها به‌روزرسانی شد."
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:135
+msgid "ماژول‌های فروشگاهی غیرفعال می‌مانند."
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:66
+msgid "ماژول‌های فعال"
+msgstr ""
+
+#: includes/class-haa-chat.php:155
+msgid "متأسفانه سقف تخفیف این بازه تمام شده است."
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:121
+msgid "متصل"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:441
+msgid "متن"
+msgstr ""
+
+#: includes/class-haa-admin.php:531
+msgid "متن جای‌گاه"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:333
+msgid "متن دیدگاه"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:176
+msgid "متن رضایت"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:196
+msgid "متن مقاله: %1$s\\nخلاصه: %2$s"
+msgstr ""
+
+#: includes/class-haa-util.php:306
+msgid "متوسط (~۸۰۰ کلمه)"
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:191
+msgid "مثلاً: کفش ورزشی مردانه"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:146
+msgid ""
+"محتوا ابتدا به‌صورت پیش‌نمایش ساخته می‌شود؛ چیزی تا زمانی که «اعمال» نزنید ذخیره یا منتشر نمی‌شود."
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:65
+msgid "محتوا و تصویر"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:26
+#: modules/class-haa-module-product-content.php:94
+#: modules/class-haa-module-product-content.php:95
+#: modules/class-haa-module-product-content.php:132
+msgid "محتوای محصول"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:170
+msgid "محصول منتشرشده"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:317
+#: modules/class-haa-module-product-content.php:388
+msgid "محصول پیدا نشد."
+msgstr ""
+
+#: includes/class-haa-content.php:143
+msgid "محصول/موضوع:"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:152
+msgid "محصول:"
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:79
+msgid "محصولات"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:159
+msgid "محصولی پیدا نشد."
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:180
+msgid "مخاطب"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:77
+msgid "مخاطب پیش‌فرض"
+msgstr ""
+
+#: includes/class-haa-content.php:44
+msgid "مخاطب:"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:94
+msgid "مدت نگهداری (روز)"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:143
+msgid "مدت نگهداری گفتگو (روز)"
+msgstr ""
+
+#: includes/class-haa-admin.php:537
+msgid "مدت کش (دقیقه)"
+msgstr ""
+
+#: includes/class-haa-api.php:661
+msgid "مدل Embedding برای این ارائه‌دهنده تعریف نشده است."
+msgstr ""
+
+#: includes/class-haa-admin.php:516
+msgid "مدل بردارسازی"
+msgstr ""
+
+#: includes/class-haa-admin.php:517
+msgid "مدل تصویر"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:361
+#: modules/class-haa-module-autopilot.php:528
+msgid "مدل متنی برنگرداند."
+msgstr ""
+
+#: includes/class-haa-admin.php:515
+msgid "مدل چت"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:251
+msgid "مدل چیزی برنگرداند."
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:100
+#: includes/class-haa-admin.php:576
+msgid "مدیریت ماژول‌ها"
+msgstr ""
+
+#: modules/class-haa-module-discount.php:27
+msgid "مذاکره‌گر تخفیف"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:95
+msgid "مراحل (هر خط یکی)"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:324
+msgid "مرحله"
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:154
+msgid "مستندات ایندکس‌شده"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:354
+msgid "مشاهده دیدگاه"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:31
+msgid ""
+"مشتری‌هایی که در چت شماره داده‌اند را جمع می‌کند، امتیاز و دما می‌دهد، یادداشت و پیگیری ثبت می‌کند و به CSV خروجی می‌دهد."
+msgstr ""
+
+#: modules/class-haa-module-discount.php:375
+msgid "مصرف"
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:80
+msgid "مطالب"
+msgstr ""
+
+#: includes/class-haa-admin.php:102
+msgid "مطمئنید؟ این کار برگشت‌پذیر نیست."
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:82
+msgid "معمولی"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:25
+#: modules/class-haa-module-article-writer.php:67
+#: modules/class-haa-module-article-writer.php:89
+#: modules/class-haa-module-article-writer.php:90
+#: modules/class-haa-module-article-writer.php:116
+msgid "مقاله‌نویس"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:30
+msgid ""
+"مقاله‌های سئوشده را در صف می‌گذارد و یکی‌یکی به‌صورت پیش‌نویس می‌سازد؛ هر مقاله می‌تواند تصویر شاخص هم داشته باشد."
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:343
+msgid "مقاله‌های مرتبط"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:325
+msgid "منبع"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:81
+#: modules/class-haa-module-autopilot.php:223
+msgid "منتشرشده"
+msgstr ""
+
+#: includes/class-haa-admin.php:518
+msgid "مهلت پاسخ (ثانیه)"
+msgstr ""
+
+#: includes/class-haa-admin.php:501
+#: modules/class-haa-module-leads.php:321
+msgid "موبایل"
+msgstr ""
+
+#: includes/class-haa-chat.php:260
+msgid "موبایل:"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:253
+msgid "موضوع"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:176
+msgid "موضوع (هر اجرا یک مقاله)"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:323
+msgid "موضوع خالی بود."
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:345
+msgid "موضوع مقاله:"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:515
+msgid "موضوع:"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:153
+msgid "موضوع‌ها (هر خط یک مقاله)"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:252
+#: modules/class-haa-module-leads.php:320
+#: modules/class-haa-module-leads.php:369
+#: templates/chat-widget.php:100
+msgid "نام"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:324
+msgid "نام و موضوع الزامی است."
+msgstr ""
+
+#: modules/class-haa-module-comments.php:77
+msgid "نام پاسخ‌دهنده"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:172
+msgid "نام کمپین"
+msgstr ""
+
+#: includes/class-haa-chat.php:257
+msgid "نام:"
+msgstr ""
+
+#: includes/class-haa-admin.php:105
+#: modules/class-haa-module-article-writer.php:140
+msgid "ناموفق"
+msgstr ""
+
+#: includes/class-haa-admin.php:497
+msgid "نحوه نمایش"
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:133
+msgid "نصب نیست"
+msgstr ""
+
+#: includes/class-haa-admin.php:502
+msgid "نقش‌ها (خالی = همه)"
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:127
+msgid "نمایش داده می‌شود"
+msgstr ""
+
+#: includes/class-haa-images.php:197
+msgid "نور طبیعی، پس‌زمینه ساده، بدون متن و بدون لوگوی برندهای دیگر"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:334
+msgid "نوع"
+msgstr ""
+
+#: includes/class-haa-admin.php:503
+msgid "نوع محتوا"
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:87
+#: includes/class-haa-admin-modules.php:89
+msgid "نیازمند ووکامرس"
+msgstr ""
+
+#: includes/class-haa-admin.php:543
+msgid "هدر IP (مثلاً CF-Connecting-IP)"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:184
+msgid "هدف"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:517
+msgid "هدف محتوا:"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:107
+msgid "هر سؤال در یک خط."
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:157
+msgid "هر موضوع یک مقاله می‌سازد. پیش‌نویس‌ها در بخش «نوشته‌ها» منتظر شما می‌مانند."
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:138
+msgid "هر گفتگو در یک ردیف جدول نشست‌ها ثبت می‌شود."
+msgstr ""
+
+#: hami-ai-assistant.php:310
+msgid "هر ۵ دقیقه (Hami AI)"
+msgstr ""
+
+#: includes/class-haa-content.php:140
+msgid "هرگز قیمت یا مشخصاتی که در اطلاعات نیامده اختراع نکن."
+msgstr ""
+
+#: includes/class-haa-admin.php:541
+#: modules/class-haa-module-comments.php:312
+msgid "همه"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:304
+msgid "همه مراحل"
+msgstr ""
+
+#: includes/class-haa-util.php:295
+msgid "هیجان‌انگیز"
+msgstr ""
+
+#: includes/class-haa-admin.php:204
+msgid "هیچ فایلی انتخاب نشده است."
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:274
+msgid "هیچ موضوعی وارد نشد."
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:77
+msgid "وزن معنایی"
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:78
+msgid "وزن کلیدواژه"
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:72
+#: modules/class-haa-module-article-writer.php:215
+#: modules/class-haa-module-autopilot.php:257
+#: modules/class-haa-module-comments.php:336
+#: modules/class-haa-module-discount.php:377
+msgid "وضعیت"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:218
+msgid "وضعیت خروجی"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:76
+#: modules/class-haa-module-autopilot.php:81
+msgid "وضعیت پیش‌فرض"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:79
+msgid "وضعیت پیش‌فرض پاسخ"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:204
+msgid ""
+"وظیفه‌ات پاسخ به دیدگاه خواننده است؛ با لحن مدیر سایت، کوتاه، بدون تکرار حرف او، فارسی روان."
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:134
+msgid "ووکامرس"
+msgstr ""
+
+#: includes/class-haa-admin-modules.php:107
+msgid ""
+"ووکامرس فعال نیست؛ ماژول‌های فروشگاهی (محتوای محصول، اتوپایلوت، تخفیف) غیرفعال می‌مانند."
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:227
+#: modules/class-haa-module-autopilot.php:278
+msgid "ویرایش"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:164
+msgid "ویرایش کمپین"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:81
+msgid "پاسخ"
+msgstr ""
+
+#: includes/class-haa-images.php:75
+#: includes/class-haa-images.php:121
+msgid "پاسخ تصویر قابل خواندن نبود."
+msgstr ""
+
+#: includes/class-haa-api.php:497
+msgid "پاسخ خالی از سرویس AI دریافت شد."
+msgstr ""
+
+#: modules/class-haa-module-comments.php:426
+msgid "پاسخ درج شد."
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:206
+msgid "پاک کردن کارهای ناموفق"
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:141
+msgid "پاک‌سازی خودکار"
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:177
+msgid "پاک‌سازی کامل"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:127
+msgid "پایان ساعات کاری"
+msgstr ""
+
+#: includes/class-haa-images.php:39
+msgid "پرامپت تصویر خالی است."
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:106
+msgid "پرسش‌های پیشنهادی"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:156
+msgid "پست امروز"
+msgstr ""
+
+#: templates/chat-widget.php:123
+msgid "پشتیبانی هوش مصنوعی"
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:127
+msgid "پنهان"
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:40
+msgid "پیام امروز"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:132
+msgid "پیام خارج از ساعات کاری"
+msgstr ""
+
+#: includes/class-haa-rest.php:144
+msgid "پیام خالی است."
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:112
+msgid "پیام خطا"
+msgstr ""
+
+#: includes/class-haa-admin.php:530
+msgid "پیام خوش‌آمد"
+msgstr ""
+
+#: templates/chat-widget.php:117
+msgid "پیام شما"
+msgstr ""
+
+#: includes/class-haa-admin.php:542
+msgid "پیام ورود الزامی"
+msgstr ""
+
+#: includes/class-haa-admin.php:410
+msgid "پیشرفته"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:174
+#: modules/class-haa-module-product-content.php:216
+#: modules/class-haa-module-product-content.php:234
+msgid "پیش‌نمایش"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:363
+msgid "پیش‌نمایشی برای اعمال نیست."
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:76
+#: modules/class-haa-module-autopilot.php:81
+#: modules/class-haa-module-autopilot.php:223
+#: modules/class-haa-module-comments.php:335
+msgid "پیش‌نویس"
+msgstr ""
+
+#: modules/class-haa-module-comments.php:309
+msgid "پیش‌نویس‌ها"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:65
+msgid "چت‌بات"
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:128
+msgid "چت‌بات در سایت"
+msgstr ""
+
+#: modules/class-haa-module-chatbot.php:27
+msgid "چت‌بات فروش"
+msgstr ""
+
+#: includes/class-haa-admin.php:498
+msgid "چپ"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:459
+msgid "چیزی اعمال نشد."
+msgstr ""
+
+#: modules/class-haa-module-comments.php:342
+msgid "چیزی نیست."
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:52
+msgid "کارهای در صف"
+msgstr ""
+
+#: modules/class-haa-module-article-writer.php:311
+msgid "کارهای ناموفق پاک شدند."
+msgstr ""
+
+#: modules/class-haa-module-discount.php:373
+msgid "کد"
+msgstr ""
+
+#: modules/class-haa-module-discount.php:439
+msgid "کد %1$s به میزان ٪%2$d صادر شد."
+msgstr ""
+
+#: includes/class-haa-chat.php:159
+msgid "کد تخفیف شما: %1$s (٪%2$d) — تا %3$s روز معتبر."
+msgstr ""
+
+#: modules/class-haa-module-discount.php:80
+msgid "کد در هر بازه برای هر بازدیدکننده"
+msgstr ""
+
+#: modules/class-haa-module-discount.php:451
+#: modules/class-haa-module-discount.php:459
+msgid "کد پیدا نشد."
+msgstr ""
+
+#: modules/class-haa-module-discount.php:384
+msgid "کدی صادر نشده است."
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:142
+msgid "کرون ثبت نشده است."
+msgstr ""
+
+#: includes/class-haa-admin.php:536
+msgid "کش پاسخ‌های تکراری"
+msgstr ""
+
+#: includes/class-haa-admin.php:513
+msgid "کلید API"
+msgstr ""
+
+#: includes/class-haa-api.php:525
+msgid "کلید API برای تولید تصویر تنظیم نشده است."
+msgstr ""
+
+#: includes/class-haa-api.php:664
+msgid "کلید API تنظیم نشده است."
+msgstr ""
+
+#: includes/class-haa-api.php:383
+msgid "کلید API تنظیم نشده است. لطفاً در تب «ارائه‌دهنده AI» آن را وارد کنید."
+msgstr ""
+
+#: includes/class-haa-admin-dashboard.php:123
+msgid "کلید API ثبت نشده است."
+msgstr ""
+
+#: includes/class-haa-api.php:987
+msgid "کلید API نامعتبر است یا مدل انتخابی در اکانت شما فعال نیست."
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:188
+#: modules/class-haa-module-product-content.php:184
+msgid "کلیدواژه‌ها"
+msgstr ""
+
+#: includes/class-haa-content.php:47
+msgid "کلیدواژه‌هایی که باید طبیعی در متن بیایند:"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:164
+msgid "کمپین جدید"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:473
+msgid "کمپین ناموجود یا متوقف است."
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:378
+#: modules/class-haa-module-autopilot.php:385
+msgid "کمپین پیدا نشد."
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:263
+msgid "کمپینی نیست."
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:248
+msgid "کمپین‌ها"
+msgstr ""
+
+#: modules/class-haa-module-autopilot.php:31
+msgid ""
+"کمپین‌های زمان‌بندی‌شده که خودشان مقاله می‌سازند و منتشر می‌کنند؛ با سقف روزانه برای توکن و تعداد پست."
+msgstr ""
+
+#: includes/class-haa-admin.php:303
+msgid "کمی بعد دوباره تلاش کنید."
+msgstr ""
+
+#: modules/class-haa-module-semantic-search.php:76
+msgid "کمینه امتیاز"
+msgstr ""
+
+#: includes/class-haa-util.php:305
+msgid "کوتاه (~۴۰۰ کلمه)"
+msgstr ""
+
+#: hami-ai-assistant.php:130
+msgid "کپی"
+msgstr ""
+
+#: includes/class-haa-admin.php:101
+msgid "کپی شد"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:82
+msgid "کیفیت تصویر"
+msgstr ""
+
+#: includes/class-haa-admin.php:528
+msgid "گردی گوشه (px)"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:681
+msgid "گرم"
+msgstr ""
+
+#: templates/chat-widget.php:65
+msgid "گفتگو"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:463
+msgid "یادداشت خالی است."
+msgstr ""
+
+#: modules/class-haa-module-leads.php:419
+msgid "یادداشت…"
+msgstr ""
+
+#: modules/class-haa-module-leads.php:99
+msgid "یک جمله خلاصه از رفتار لید می‌سازد."
+msgstr ""
+
+#: modules/class-haa-module-leads.php:764
+msgid ""
+"یک جمله فارسی و کوتاه درباره این مشتری بنویس: چه می‌خواهد، چه پرسیده و چه باید کرد. فقط همان یک جمله را برگردان."
+msgstr ""
+
+#: modules/class-haa-module-comments.php:227
+msgid "یک پاسخ مناسب بنویس؛ حداکثر ۶۰ کلمه، بدون ایموجی."
+msgstr ""
+
+#: modules/class-haa-module-leads.php:370
+msgid "۰۹۱۲…"
+msgstr ""
+
+#: modules/class-haa-module-product-content.php:173
+msgid "—"
+msgstr ""
+
