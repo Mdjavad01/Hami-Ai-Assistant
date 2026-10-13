@@ -57,6 +57,7 @@
 	var batchSubmit = qs('[data-haai-batch-submit]');
 	var batchEstimate = qs('[data-haai-batch-estimate]');
 	var withImage = qs('input[name="with_image"]');
+	var openId = root.getAttribute('data-open') || '';
 
 	/* ------------------------------------------------------------------
 	 * Transport
@@ -252,11 +253,11 @@
 
 	function contentBadge(row) {
 		var missing = [];
-		if (!row.has_excerpt) missing.push('کوتاه');
-		if (!row.has_content) missing.push('توضیح');
+		if (!row.has_excerpt) missing.push('توضیح کوتاه');
+		if (!row.has_content) missing.push('توضیح کامل');
 		if (!row.has_thumb) missing.push('تصویر');
 		if (!missing.length) return '<span class="haai-badge haai-badge--on">کامل</span>';
-		return '<span class="haai-badge haai-badge--warn" title="بدون: ' + esc(missing.join('، ')) + '">ناقص · ' + esc(missing.length) + '</span>';
+		return '<span class="haai-badge haai-badge--warn">' + esc(missing.join('، ')) + '</span>';
 	}
 
 	function renderRows(d) {
@@ -270,22 +271,25 @@
 			body.appendChild(tr);
 		}
 
-		rows.forEach(function (row) {
-			var tr = document.createElement('tr');
-			tr.innerHTML =
-				'<td class="haai-col-check"><input type="checkbox" class="haai-row-check" value="' + esc(row.id) +
-					'" data-title="' + esc(row.title) + '" aria-label="' + esc(row.title) + '"></td>' +
-				'<td>' + (row.thumb
-					? '<img src="' + esc(row.thumb) + '" alt="" width="44" height="44" loading="lazy" class="haai-prod-thumb">'
-					: '<span class="haai-prod-thumb is-none" aria-hidden="true"></span>') + '</td>' +
-				'<td class="haai-prod-title"><a href="' + esc(cfg.screen) + '&product=' + encodeURIComponent(row.id) + '">' + esc(row.title) + '</a>' +
-					'<span class="haai-prod-meta">#' + esc(row.id) + (row.type ? ' · ' + esc(row.type) : '') + (row.stock ? ' · ' + esc(row.stock) : '') + '</span></td>' +
-				'<td>' + (row.sku ? esc(row.sku) : '<span class="haai-dim">—</span>') + '</td>' +
-				'<td>' + (row.price ? esc(row.price) : '<span class="haai-dim">—</span>') + '</td>' +
-				'<td>' + ((row.cats && row.cats.length) ? esc(row.cats.join('، ')) : '<span class="haai-dim">—</span>') + '</td>' +
-				'<td>' + contentBadge(row) + '</td>';
-			body.appendChild(tr);
-		});
+	rows.forEach(function (row) {
+		var tr = document.createElement('tr');
+		tr.innerHTML =
+			'<td class="haai-col-check"><input type="checkbox" class="haai-row-check" value="' + esc(row.id) +
+				'" data-title="' + esc(row.title) + '" aria-label="' + esc(row.title) + '"></td>' +
+			'<td>' + (row.thumb
+				? '<img src="' + esc(row.thumb) + '" alt="" width="44" height="44" loading="lazy" class="haai-prod-thumb">'
+				: '<span class="haai-prod-thumb is-none" aria-hidden="true"></span>') + '</td>' +
+			'<td class="haai-prod-title"><a href="' + esc(cfg.screen) + '&product=' + encodeURIComponent(row.id) + '" title="' + esc(row.title) + '">' + esc(row.title) + '</a>' +
+				'<span class="haai-prod-meta">#' + esc(row.id) + (row.type ? ' · ' + esc(row.type) : '') + (row.stock ? ' · ' + esc(row.stock) : '') + '</span>' +
+				(row.desc ? '<span class="haai-prod-desc">' + esc(row.desc) + '</span>' : '') + '</td>' +
+			'<td>' + (row.sku ? esc(row.sku) : '<span class="haai-dim">—</span>') + '</td>' +
+			'<td>' + (row.price ? esc(row.price) : '<span class="haai-dim">—</span>') + '</td>' +
+			'<td>' + ((row.cats && row.cats.length) ? esc(row.cats.join('، ')) : '<span class="haai-dim">—</span>') + '</td>' +
+			'<td>' + contentBadge(row) + '</td>';
+		body.appendChild(tr);
+		if (openId && String(row.id) === String(openId)) tr.classList.add('is-open');
+		if (selected[String(row.id)]) tr.classList.add('is-selected');
+	});
 
 		page = (d && d.page) || page;
 		pages = Math.max(1, (d && d.pages) || 1);
@@ -298,6 +302,7 @@
 		});
 		syncHead();
 		syncSelection();
+		refreshDdCount();
 	}
 
 	function syncHead() {
@@ -389,10 +394,138 @@
 	});
 	on(qs('[data-haai-pgo]'), 'click', function () { go(1); });
 	qsa('[data-haai-pstatus],[data-haai-ptype],[data-haai-pstock],[data-haai-pcontent]').forEach(function (el) {
-		on(el, 'change', function () { go(1); });
+		on(el, 'change', function () { refreshDdCount(); go(1); });
 	});
 	on(qs('[data-haai-pprev]'), 'click', function () { if (page > 1) { page--; go(); } });
 	on(qs('[data-haai-pnext]'), 'click', function () { if (page < pages) { page++; go(); } });
+
+	on(qs('[data-haai-pper]'), 'change', function () {
+		per = parseInt(this.value, 10) || per;
+		go(1);
+	});
+
+	on(qs('[data-haai-pclear]'), 'click', function () {
+		qsa('[data-haai-pstatus] option,[data-haai-pcontent] option').forEach(function (o) { o.selected = false; });
+		var t = qs('[data-haai-ptype]');
+		var s = qs('[data-haai-pstock]');
+		if (t) t.selectedIndex = 0;
+		if (s) s.selectedIndex = 0;
+		refreshDdCount();
+		go(1);
+	});
+
+	/* ------------------------------------------------------------------
+	 * Filter dropdown: one button, one panel, an outside click closes it
+	 * ---------------------------------------------------------------- */
+
+	var dd = qs('[data-haai-dd]');
+	var ddBtn = qs('[data-haai-dd-btn]');
+	var ddPanel = qs('[data-haai-dd-panel]');
+	var ddCount = qs('[data-haai-dd-count]');
+
+	function ddClose() {
+		if (!dd) return;
+		dd.classList.remove('is-open');
+		if (ddPanel) ddPanel.hidden = true;
+		if (ddBtn) ddBtn.setAttribute('aria-expanded', 'false');
+	}
+
+	on(ddBtn, 'click', function (e) {
+		e.stopPropagation();
+		if (!dd) return;
+		var open = dd.classList.toggle('is-open');
+		if (ddPanel) ddPanel.hidden = !open;
+		if (ddBtn) ddBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+	});
+	on(document, 'click', function (e) {
+		if (dd && dd.classList.contains('is-open') && !dd.contains(e.target)) ddClose();
+	});
+	on(document, 'keydown', function (e) {
+		if (e.key === 'Escape' || e.keyCode === 27) ddClose();
+	});
+
+	function refreshDdCount() {
+		if (!ddCount) return;
+		var n = 0;
+		qsa('[data-haai-pstatus] option:checked').forEach(function () { n++; });
+		qsa('[data-haai-pcontent] option:checked').forEach(function () { n++; });
+		var t = qs('[data-haai-ptype]');
+		var s = qs('[data-haai-pstock]');
+		if (t && t.value) n++;
+		if (s && s.value) n++;
+		ddCount.hidden = n === 0;
+		ddCount.textContent = n;
+	}
+
+	/* ------------------------------------------------------------------
+	 * Preview editor: tabs, counters, FAQ rows, live view
+	 * ---------------------------------------------------------------- */
+
+	var pvEdit = qs('[data-haai-pvedit]');
+	if (pvEdit) {
+		var pvTabs = qsa('[data-haai-tab]', pvEdit);
+		var pvPanes = qsa('[data-haai-pane]', pvEdit);
+		var pvSrc = qs('[data-haai-pvsrc]', pvEdit);
+		var pvView = qs('[data-haai-pvview]', pvEdit);
+
+		pvTabs.forEach(function (btn) {
+			on(btn, 'click', function () {
+				var want = btn.getAttribute('data-haai-tab');
+				pvTabs.forEach(function (b) {
+					var isIt = b === btn;
+					b.classList.toggle('is-active', isIt);
+					b.setAttribute('aria-selected', isIt ? 'true' : 'false');
+				});
+				pvPanes.forEach(function (p) {
+					var isIt = p.getAttribute('data-haai-pane') === want;
+					p.hidden = !isIt;
+					p.classList.toggle('is-active', isIt);
+				});
+				if (want === 'view') paintView();
+			});
+		});
+
+		function paintView() {
+			if (pvView && pvSrc) pvView.innerHTML = pvSrc.value;
+		}
+
+		var paintTimer = null;
+		on(pvSrc, 'input', function () {
+			if (paintTimer) clearTimeout(paintTimer);
+			paintTimer = setTimeout(function () { paintView(); refreshCounts(); }, 300);
+		});
+
+		function refreshCounts() {
+			qsa('[data-haai-count]', pvEdit).forEach(function (el) {
+				var out = qs('[data-haai-countfor="' + el.id + '"]', pvEdit);
+				if (!out) return;
+				var target = parseInt(el.getAttribute('data-haai-count'), 10) || 0;
+				var n = el.value.length;
+				out.textContent = n + ' / ' + target;
+				out.classList.toggle('is-over', n > target);
+			});
+			var bc = qs('[data-haai-bodycount]', pvEdit);
+			if (bc && pvSrc) {
+				var words = (pvSrc.value.trim().match(/\S+/g) || []).length;
+				bc.textContent = words + ' واژه';
+			}
+		}
+		qsa('[data-haai-count]', pvEdit).forEach(function (el) { on(el, 'input', refreshCounts); });
+		refreshCounts();
+
+		var faqBox = qs('[data-haai-faq]', pvEdit);
+		var faqTpl = qs('[data-haai-faqtpl]', pvEdit);
+		on(qs('[data-haai-faqadd]', pvEdit), 'click', function () {
+			if (!faqBox || !faqTpl || !faqTpl.content) return;
+			faqBox.appendChild(faqTpl.content.firstElementChild.cloneNode(true));
+		});
+		faqBox && on(faqBox, 'click', function (e) {
+			var del = e.target && e.target.closest ? e.target.closest('[data-haai-faqdel]') : null;
+			if (!del) return;
+			var row = del.closest('[data-haai-faqrow]');
+			if (row) row.parentNode.removeChild(row);
+		});
+	}
 
 	// Batch submit guards itself: an empty selection is caught before the post.
 	on(qs('[data-haai-batch-form]'), 'submit', function (e) {

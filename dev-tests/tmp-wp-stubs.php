@@ -689,7 +689,10 @@ function wp_safe_redirect( $u, $s = 302 ) { $GLOBALS['redirect'] = $u; return tr
 function rest_url( $p = '' ) { return 'http://local.test/wp-json/' . $p; }
 function admin_url( $p = '' ) { return 'http://local.test/wp-admin/' . $p; }
 function get_bloginfo( $k ) { return 'Hami Shop'; }
-function current_time( $t ) { return '2026-10-12 00:00:00'; }
+// One live clock for the whole harness: a hardcoded date here made rows written
+// "now" older than the live-clock day boundary / TTLs one day later, so daily
+// caps and snapshot freshness silently stopped counting anything.
+function current_time( $t ) { return gmdate( 'Y-m-d H:i:s' ); }
 function number_format_i18n( $n ) { return number_format( (int) $n ); }
 function mysql2date( $f, $d ) { return (string) $d; }
 function url_to_postid( $u ) {

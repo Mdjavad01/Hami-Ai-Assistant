@@ -263,65 +263,115 @@ final class Haa_Module_Product_Content implements Haa_Module_Interface {
 				</p>
 			</form>
 
-			<?php if ( $preview ) : ?>
-				<h2><?php esc_html_e( 'پیش‌نمایش', 'hami-ai-assistant' ); ?></h2>
+		<?php if ( $preview ) : ?>
+			<h2 class="haai-pvtitle">
+				<?php esc_html_e( 'پیش‌نمایش', 'hami-ai-assistant' ); ?>
+				<span class="description"><?php esc_html_e( 'همه‌ی فیلدها قابل ویرایش‌اند؛ دقیقاً همین مقادیر اعمال می‌شوند.', 'hami-ai-assistant' ); ?></span>
+			</h2>
 
-				<div class="haai-field">
-					<label class="haai-field__label"><?php esc_html_e( 'عنوان سئو', 'hami-ai-assistant' ); ?></label>
-					<div class="haai-field__control"><input type="text" class="large-text" readonly value="<?php echo esc_attr( $preview['seo_title'] ?? '' ); ?>"></div>
-				</div>
-				<div class="haai-field">
-					<label class="haai-field__label"><?php esc_html_e( 'توضیح متا', 'hami-ai-assistant' ); ?></label>
-					<div class="haai-field__control"><textarea rows="3" class="large-text" readonly><?php echo esc_textarea( $preview['seo_description'] ?? '' ); ?></textarea></div>
-				</div>
-				<div class="haai-field">
-					<label class="haai-field__label"><?php esc_html_e( 'اسلگ', 'hami-ai-assistant' ); ?></label>
-					<div class="haai-field__control"><input type="text" class="regular-text" readonly value="<?php echo esc_attr( $preview['slug'] ?? '' ); ?>"></div>
+			<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" class="haai-pvform">
+				<?php wp_nonce_field( 'haai_pc' ); ?>
+				<input type="hidden" name="action" value="haai_pc_apply">
+				<input type="hidden" name="product_id" value="<?php echo esc_attr( $pid ); ?>">
+
+				<div class="haai-pvmeta">
+					<div class="haai-field">
+						<label class="haai-field__label" for="haai-pv-title"><?php esc_html_e( 'عنوان سئو', 'hami-ai-assistant' ); ?></label>
+						<div class="haai-field__control">
+							<input type="text" id="haai-pv-title" class="large-text" name="seo_title" maxlength="80"
+								value="<?php echo esc_attr( $preview['seo_title'] ?? '' ); ?>"
+								data-haai-count="60" placeholder="<?php esc_attr_e( 'حداکثر ۶۰ کاراکتر پیشنهاد می‌شود', 'hami-ai-assistant' ); ?>">
+							<p class="description haai-count" data-haai-countfor="haai-pv-title"></p>
+						</div>
+					</div>
+					<div class="haai-field">
+						<label class="haai-field__label" for="haai-pv-desc"><?php esc_html_e( 'توضیح متا', 'hami-ai-assistant' ); ?></label>
+						<div class="haai-field__control">
+							<textarea id="haai-pv-desc" name="seo_description" rows="3" class="large-text" maxlength="200"
+								data-haai-count="155"><?php echo esc_textarea( $preview['seo_description'] ?? '' ); ?></textarea>
+							<p class="description haai-count" data-haai-countfor="haai-pv-desc"></p>
+						</div>
+					</div>
+					<div class="haai-field">
+						<label class="haai-field__label" for="haai-pv-slug"><?php esc_html_e( 'اسلگ', 'hami-ai-assistant' ); ?></label>
+						<div class="haai-field__control">
+							<input type="text" id="haai-pv-slug" class="regular-text" name="slug" dir="ltr"
+								value="<?php echo esc_attr( $preview['slug'] ?? '' ); ?>">
+							<p class="description"><?php esc_html_e( 'خالی بگذارید تا اسلگ پیشنهادی مدل حفظ شود؛ فقط حروف لاتین، شماره و خط تیره.', 'hami-ai-assistant' ); ?></p>
+						</div>
+					</div>
 				</div>
 
 				<fieldset class="haai-field haai-field--bare">
 					<legend class="haai-field__legend"><?php esc_html_e( 'بدنه متن', 'hami-ai-assistant' ); ?></legend>
-					<div class="haai-preview">
-						<span class="haai-preview__label"><?php esc_html_e( 'پیش‌نمایش', 'hami-ai-assistant' ); ?></span>
-						<div class="haai-preview__frame"><?php echo wp_kses_post( $preview['html'] ?? '' ); ?></div>
+					<div class="haai-pvedit" data-haai-pvedit>
+						<div class="haai-pvedit__tabs" role="tablist">
+							<button type="button" class="button button-small is-active" data-haai-tab="view" role="tab" aria-selected="true"><?php esc_html_e( 'پیش‌نمایش', 'hami-ai-assistant' ); ?></button>
+							<button type="button" class="button button-small" data-haai-tab="src" role="tab" aria-selected="false"><?php esc_html_e( 'ویرایش HTML', 'hami-ai-assistant' ); ?></button>
+							<span class="haai-count haai-count--inline" data-haai-bodycount></span>
+						</div>
+						<div class="haai-pvedit__pane is-active" data-haai-pane="view">
+							<div class="haai-pv-frame" data-haai-pvview><?php echo wp_kses_post( $preview['html'] ?? '' ); ?></div>
+						</div>
+						<div class="haai-pvedit__pane" data-haai-pane="src" hidden>
+							<textarea name="html" rows="18" class="haai-pv-src" dir="ltr" spellcheck="false"
+								data-haai-pvsrc><?php echo esc_textarea( $preview['html'] ?? '' ); ?></textarea>
+						</div>
 					</div>
 				</fieldset>
 
-				<?php if ( ! empty( $preview['faq'] ) ) : ?>
-					<h3><?php esc_html_e( 'سؤالات متداول', 'hami-ai-assistant' ); ?></h3>
-					<ol class="haai-hits">
-						<?php foreach ( $preview['faq'] as $f ) : ?>
-							<li>
-								<span class="haai-hit-title"><?php echo esc_html( $f['q'] ); ?></span>
-								<span class="haai-hit-excerpt"><?php echo esc_html( wp_strip_all_tags( $f['a'] ) ); ?></span>
-							</li>
+				<fieldset class="haai-field haai-field--bare">
+					<legend class="haai-field__legend"><?php esc_html_e( 'سؤالات متداول', 'hami-ai-assistant' ); ?></legend>
+					<div class="haai-faq" data-haai-faq>
+						<?php
+						$faq_rows = (array) ( $preview['faq'] ?? array() );
+						if ( ! $faq_rows ) {
+							$faq_rows = array( array( 'q' => '', 'a' => '' ) );
+						}
+						foreach ( $faq_rows as $f ) :
+							?>
+							<div class="haai-faqrow" data-haai-faqrow>
+								<input type="text" name="faq[][q]" value="<?php echo esc_attr( (string) ( $f['q'] ?? '' ) ); ?>" placeholder="<?php esc_attr_e( 'سؤال', 'hami-ai-assistant' ); ?>">
+								<textarea name="faq[][a]" rows="2" placeholder="<?php esc_attr_e( 'پاسخ', 'hami-ai-assistant' ); ?>"><?php echo esc_textarea( (string) ( $f['a'] ?? '' ) ); ?></textarea>
+								<button type="button" class="button-link-delete" data-haai-faqdel><?php esc_html_e( 'حذف', 'hami-ai-assistant' ); ?></button>
+							</div>
 						<?php endforeach; ?>
-					</ol>
-				<?php endif; ?>
+					</div>
+					<p class="haai-faq__add">
+						<button type="button" class="button button-small" data-haai-faqadd><?php esc_html_e( 'افزودن سؤال', 'hami-ai-assistant' ); ?></button>
+					</p>
+					<template data-haai-faqtpl>
+						<div class="haai-faqrow" data-haai-faqrow>
+							<input type="text" name="faq[][q]" value="" placeholder="<?php esc_attr_e( 'سؤال', 'hami-ai-assistant' ); ?>">
+							<textarea name="faq[][a]" rows="2" placeholder="<?php esc_attr_e( 'پاسخ', 'hami-ai-assistant' ); ?>"></textarea>
+							<button type="button" class="button-link-delete" data-haai-faqdel><?php esc_html_e( 'حذف', 'hami-ai-assistant' ); ?></button>
+						</div>
+					</template>
+				</fieldset>
 
 				<div class="haai-actions">
-					<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
-						<?php wp_nonce_field( 'haai_pc' ); ?>
-						<input type="hidden" name="action" value="haai_pc_apply">
-						<input type="hidden" name="product_id" value="<?php echo esc_attr( $pid ); ?>">
-						<button type="submit" class="button button-primary"><?php esc_html_e( 'اعمال روی محصول', 'hami-ai-assistant' ); ?></button>
-					</form>
-					<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
-						<?php wp_nonce_field( 'haai_pc' ); ?>
-						<input type="hidden" name="action" value="haai_pc_image">
-						<input type="hidden" name="product_id" value="<?php echo esc_attr( $pid ); ?>">
-						<button type="submit" class="button" <?php disabled( empty( Haa_Settings::get( 'content.enable_images' ) ) ); ?>>
-							<?php esc_html_e( 'تولید تصویر', 'hami-ai-assistant' ); ?>
-						</button>
-					</form>
-					<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
-						<?php wp_nonce_field( 'haai_pc' ); ?>
-						<input type="hidden" name="action" value="haai_pc_dismiss">
-						<input type="hidden" name="product_id" value="<?php echo esc_attr( $pid ); ?>">
-						<button type="submit" class="button-link-delete"><?php esc_html_e( 'حذف پیش‌نمایش', 'hami-ai-assistant' ); ?></button>
-					</form>
+					<button type="submit" class="button button-primary"><?php esc_html_e( 'اعمال روی محصول', 'hami-ai-assistant' ); ?></button>
+					<span class="description"><?php esc_html_e( 'پیش‌نمایش پس از اعمال حذف می‌شود.', 'hami-ai-assistant' ); ?></span>
 				</div>
-			<?php endif; ?>
+			</form>
+
+			<div class="haai-actions">
+				<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+					<?php wp_nonce_field( 'haai_pc' ); ?>
+					<input type="hidden" name="action" value="haai_pc_image">
+					<input type="hidden" name="product_id" value="<?php echo esc_attr( $pid ); ?>">
+					<button type="submit" class="button" <?php disabled( empty( Haa_Settings::get( 'content.enable_images' ) ) ); ?>>
+						<?php esc_html_e( 'تولید تصویر', 'hami-ai-assistant' ); ?>
+					</button>
+				</form>
+				<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+					<?php wp_nonce_field( 'haai_pc' ); ?>
+					<input type="hidden" name="action" value="haai_pc_dismiss">
+					<input type="hidden" name="product_id" value="<?php echo esc_attr( $pid ); ?>">
+					<button type="submit" class="button-link-delete"><?php esc_html_e( 'حذف پیش‌نمایش', 'hami-ai-assistant' ); ?></button>
+				</form>
+			</div>
+		<?php endif; ?>
 		</div>
 		<?php
 	}
@@ -822,8 +872,25 @@ final class Haa_Module_Product_Content implements Haa_Module_Interface {
 		$look     = array();
 
 		if ( $present ) {
+			// WooCommerce 3.6 renamed the columns: price became min_price /
+			// max_price and thumb_id was dropped. Selecting the old names made
+			// this query fail silently and the price column came back empty.
+			$cols   = self::lookup_columns();
+			$select = array( 'product_id', 'sku' );
+			$price  = in_array( 'min_price', $cols, true )
+				? 'min_price'
+				: ( in_array( 'price', $cols, true ) ? 'price' : '' );
+			if ( '' !== $price ) {
+				$select[] = $price;
+				if ( 'min_price' === $price && in_array( 'max_price', $cols, true ) ) {
+					$select[] = 'max_price';
+				}
+			}
+			if ( in_array( 'thumb_id', $cols, true ) ) {
+				$select[] = 'thumb_id';
+			}
 			$in   = implode( ',', array_map( 'intval', $ids ) );
-			$rows = $wpdb->get_results( "SELECT product_id, sku, price, thumb_id FROM $lookup WHERE product_id IN ($in)", ARRAY_A ); // phpcs:ignore WordPress.DB
+			$rows = $wpdb->get_results( 'SELECT ' . implode( ', ', $select ) . " FROM $lookup WHERE product_id IN ($in)", ARRAY_A ); // phpcs:ignore WordPress.DB
 			foreach ( (array) $rows as $r ) {
 				$look[ (int) $r['product_id'] ] = $r;
 			}
@@ -848,14 +915,15 @@ final class Haa_Module_Product_Content implements Haa_Module_Interface {
 				$type  = (string) $first[0]->name;
 			}
 
-			$row = isset( $look[ $id ] ) ? $look[ $id ] : array();
+		$row = isset( $look[ $id ] ) ? $look[ $id ] : array();
 
-			$out[] = array(
-				'id'        => $id,
-				'title'     => '' !== (string) get_the_title( $id ) ? get_the_title( $id ) : __( '(بدون عنوان)', 'hami-ai-assistant' ),
-				'sku'       => isset( $row['sku'] ) ? (string) $row['sku'] : (string) get_post_meta( $id, '_sku', true ),
-				'price'     => isset( $row['price'] ) ? (string) $row['price'] : '',
-				'thumb'     => self::thumb_for( $id, $row ),
+		$out[] = array(
+			'id'        => $id,
+			'title'     => '' !== (string) get_the_title( $id ) ? get_the_title( $id ) : __( '(بدون عنوان)', 'hami-ai-assistant' ),
+			'desc'      => Haa_Util::cut( wp_strip_all_tags( (string) get_post_field( 'post_excerpt', $id ) ), 90 ),
+			'sku'       => isset( $row['sku'] ) ? (string) $row['sku'] : (string) get_post_meta( $id, '_sku', true ),
+			'price'     => self::price_label( $id, $row ),
+			'thumb'     => self::thumb_for( $id, $row ),
 				'cats'      => $cats,
 				'type'      => $type,
 				'stock'     => (string) get_post_meta( $id, '_stock_status', true ),
@@ -870,6 +938,52 @@ final class Haa_Module_Product_Content implements Haa_Module_Interface {
 		unset( $terms );
 
 		return $out;
+	}
+
+	/**
+	 * Columns of the WooCommerce lookup table, probed once per request.
+	 *
+	 * @return array<int,string>
+	 */
+	private static function lookup_columns() {
+		static $cols = null;
+		if ( null === $cols ) {
+			global $wpdb;
+			$cols = array_map( 'strval', (array) $wpdb->get_col( 'SHOW COLUMNS FROM ' . $wpdb->prefix . 'wc_product_meta_lookup' ) ); // phpcs:ignore WordPress.DB
+		}
+		return $cols;
+	}
+
+	/**
+	 * Readable price for one row: the lookup's min/max when it has them, the
+	 * legacy price column or _price meta otherwise, formatted by WooCommerce.
+	 *
+	 * @param int   $id  Product id.
+	 * @param array $row Lookup row, if any.
+	 * @return string
+	 */
+	private static function price_label( $id, $row ) {
+		$min = '';
+		if ( isset( $row['min_price'] ) ) {
+			$min = (string) $row['min_price'];
+		} elseif ( isset( $row['price'] ) ) {
+			$min = (string) $row['price'];
+		} else {
+			$min = (string) get_post_meta( $id, '_price', true );
+		}
+		$min = trim( $min );
+		if ( '' === $min || ! is_numeric( $min ) ) {
+			return '';
+		}
+
+		$max = isset( $row['max_price'] ) ? trim( (string) $row['max_price'] ) : '';
+		if ( '' !== $max && is_numeric( $max ) && (float) $max > (float) $min ) {
+			return function_exists( 'wc_format_price_range' )
+				? wp_strip_all_tags( (string) wc_format_price_range( $min, $max ) )
+				: $min . ' – ' . $max;
+		}
+
+		return function_exists( 'wc_price' ) ? wp_strip_all_tags( (string) wc_price( $min ) ) : $min;
 	}
 
 	/**
@@ -920,7 +1034,7 @@ final class Haa_Module_Product_Content implements Haa_Module_Interface {
 		$open = ( $selected && get_post( $selected ) ) ? get_the_title( $selected ) : '';
 		$cap  = self::select_cap();
 		?>
-		<div class="haai-prodpicker" data-haai-prodpicker data-cap="<?php echo (int) $cap; ?>">
+		<div class="haai-prodpicker" data-haai-prodpicker data-cap="<?php echo (int) $cap; ?>" data-open="<?php echo (int) $selected; ?>">
 
 			<?php if ( $open ) : ?>
 			<p class="haai-prodpicker__current">
@@ -954,35 +1068,53 @@ final class Haa_Module_Product_Content implements Haa_Module_Interface {
 							placeholder="<?php esc_attr_e( 'عنوان، SKU یا شناسه‌ی محصول…', 'hami-ai-assistant' ); ?>"
 							aria-label="<?php esc_attr_e( 'جستجوی محصول', 'hami-ai-assistant' ); ?>">
 
-						<select data-haai-pstatus multiple size="1" aria-label="<?php esc_attr_e( 'وضعیت انتشار', 'hami-ai-assistant' ); ?>">
-							<option value="publish"><?php esc_html_e( 'منتشر', 'hami-ai-assistant' ); ?></option>
-							<option value="draft"><?php esc_html_e( 'پیش‌نویس', 'hami-ai-assistant' ); ?></option>
-							<option value="pending"><?php esc_html_e( 'در انتظار', 'hami-ai-assistant' ); ?></option>
-							<option value="private"><?php esc_html_e( 'خصوصی', 'hami-ai-assistant' ); ?></option>
-						</select>
+						<span class="haai-dd" data-haai-dd>
+							<button type="button" class="button" data-haai-dd-btn aria-expanded="false" aria-haspopup="true">
+								<?php esc_html_e( 'فیلترها', 'hami-ai-assistant' ); ?>
+								<span class="haai-dd__n" data-haai-dd-count hidden></span>
+							</button>
+							<span class="haai-dd__panel" data-haai-dd-panel hidden>
+								<span class="haai-dd__group">
+									<strong><?php esc_html_e( 'وضعیت انتشار', 'hami-ai-assistant' ); ?></strong>
+									<select data-haai-pstatus multiple size="4" aria-label="<?php esc_attr_e( 'وضعیت انتشار', 'hami-ai-assistant' ); ?>">
+										<option value="publish"><?php esc_html_e( 'منتشر', 'hami-ai-assistant' ); ?></option>
+										<option value="draft"><?php esc_html_e( 'پیش‌نویس', 'hami-ai-assistant' ); ?></option>
+										<option value="pending"><?php esc_html_e( 'در انتظار', 'hami-ai-assistant' ); ?></option>
+										<option value="private"><?php esc_html_e( 'خصوصی', 'hami-ai-assistant' ); ?></option>
+									</select>
+								</span>
+								<span class="haai-dd__group">
+									<strong><?php esc_html_e( 'نوع محصول', 'hami-ai-assistant' ); ?></strong>
+									<select data-haai-ptype aria-label="<?php esc_attr_e( 'نوع محصول', 'hami-ai-assistant' ); ?>">
+										<option value=""><?php esc_html_e( 'همه نوع‌ها', 'hami-ai-assistant' ); ?></option>
+										<option value="simple"><?php esc_html_e( 'ساده', 'hami-ai-assistant' ); ?></option>
+										<option value="variable"><?php esc_html_e( 'متغیر', 'hami-ai-assistant' ); ?></option>
+										<option value="grouped"><?php esc_html_e( 'گروهی', 'hami-ai-assistant' ); ?></option>
+										<option value="external"><?php esc_html_e( 'خارجی', 'hami-ai-assistant' ); ?></option>
+									</select>
+								</span>
+								<span class="haai-dd__group">
+									<strong><?php esc_html_e( 'موجودی', 'hami-ai-assistant' ); ?></strong>
+									<select data-haai-pstock aria-label="<?php esc_attr_e( 'موجودی', 'hami-ai-assistant' ); ?>">
+										<option value=""><?php esc_html_e( 'همه موجودی‌ها', 'hami-ai-assistant' ); ?></option>
+										<option value="instock"><?php esc_html_e( 'موجود', 'hami-ai-assistant' ); ?></option>
+										<option value="outofstock"><?php esc_html_e( 'ناموجود', 'hami-ai-assistant' ); ?></option>
+										<option value="onbackorder"><?php esc_html_e( 'سفارش پشت‌نوبت', 'hami-ai-assistant' ); ?></option>
+									</select>
+								</span>
+								<span class="haai-dd__group">
+									<strong><?php esc_html_e( 'وضعیت محتوا', 'hami-ai-assistant' ); ?></strong>
+									<select data-haai-pcontent multiple size="3" aria-label="<?php esc_attr_e( 'وضعیت محتوا', 'hami-ai-assistant' ); ?>">
+										<option value="no_excerpt"><?php esc_html_e( 'بدون توضیح کوتاه', 'hami-ai-assistant' ); ?></option>
+										<option value="no_description"><?php esc_html_e( 'بدون توضیح کامل', 'hami-ai-assistant' ); ?></option>
+										<option value="no_thumbnail"><?php esc_html_e( 'بدون تصویر شاخص', 'hami-ai-assistant' ); ?></option>
+									</select>
+								</span>
+								<button type="button" class="button-link" data-haai-pclear><?php esc_html_e( 'پاک‌کردن فیلترها', 'hami-ai-assistant' ); ?></button>
+							</span>
+						</span>
 
-						<select data-haai-ptype aria-label="<?php esc_attr_e( 'نوع محصول', 'hami-ai-assistant' ); ?>">
-							<option value=""><?php esc_html_e( 'همه نوع‌ها', 'hami-ai-assistant' ); ?></option>
-							<option value="simple"><?php esc_html_e( 'ساده', 'hami-ai-assistant' ); ?></option>
-							<option value="variable"><?php esc_html_e( 'متغیر', 'hami-ai-assistant' ); ?></option>
-							<option value="grouped"><?php esc_html_e( 'گروهی', 'hami-ai-assistant' ); ?></option>
-							<option value="external"><?php esc_html_e( 'خارجی', 'hami-ai-assistant' ); ?></option>
-						</select>
-
-						<select data-haai-pstock aria-label="<?php esc_attr_e( 'موجودی', 'hami-ai-assistant' ); ?>">
-							<option value=""><?php esc_html_e( 'همه موجودی‌ها', 'hami-ai-assistant' ); ?></option>
-							<option value="instock"><?php esc_html_e( 'موجود', 'hami-ai-assistant' ); ?></option>
-							<option value="outofstock"><?php esc_html_e( 'ناموجود', 'hami-ai-assistant' ); ?></option>
-							<option value="onbackorder"><?php esc_html_e( 'سفارش پشت‌نوبت', 'hami-ai-assistant' ); ?></option>
-						</select>
-
-						<select data-haai-pcontent multiple size="1" aria-label="<?php esc_attr_e( 'وضعیت محتوا', 'hami-ai-assistant' ); ?>">
-							<option value="no_excerpt"><?php esc_html_e( 'بدون توضیح کوتاه', 'hami-ai-assistant' ); ?></option>
-							<option value="no_description"><?php esc_html_e( 'بدون توضیح کامل', 'hami-ai-assistant' ); ?></option>
-							<option value="no_thumbnail"><?php esc_html_e( 'بدون تصویر شاخص', 'hami-ai-assistant' ); ?></option>
-						</select>
-
-						<button type="button" class="button" data-haai-pgo><?php esc_html_e( 'اعمال فیلتر', 'hami-ai-assistant' ); ?></button>
+						<button type="button" class="button button-primary" data-haai-pgo><?php esc_html_e( 'اعمال فیلتر', 'hami-ai-assistant' ); ?></button>
 					</p>
 
 					<p class="haai-selectionbar" data-haai-selbar hidden>
@@ -1016,6 +1148,14 @@ final class Haa_Module_Product_Content implements Haa_Module_Interface {
 						<button type="button" class="button" data-haai-pprev><?php esc_html_e( 'قبلی', 'hami-ai-assistant' ); ?></button>
 						<span class="description" data-haai-pcounter></span>
 						<button type="button" class="button" data-haai-pnext><?php esc_html_e( 'بعدی', 'hami-ai-assistant' ); ?></button>
+						<label class="haai-pager__per">
+							<span><?php esc_html_e( 'تعداد در صفحه', 'hami-ai-assistant' ); ?></span>
+							<select data-haai-pper>
+								<?php foreach ( array( self::PER_MIN, 30, self::PER_MAX ) as $n ) : ?>
+									<option value="<?php echo (int) $n; ?>" <?php selected( (int) $n, self::PER_MIN ); ?>><?php echo (int) $n; ?></option>
+								<?php endforeach; ?>
+							</select>
+						</label>
 						<span class="description" data-haai-pinfo></span>
 					</p>
 				</div>
@@ -1327,6 +1467,62 @@ final class Haa_Module_Product_Content implements Haa_Module_Interface {
 		return array( 'ok' => true );
 	}
 
+	/**
+	 * Fold the edited preview fields from the apply form over the stored brief.
+	 *
+	 * The screen posts seo_title / seo_description / slug / html / faq back;
+	 * anything missing keeps its model value, and anything empty is dropped so
+	 * «اعمال» never writes a blank over good content.
+	 *
+	 * @param array $preview Stored brief.
+	 * @return array Brief with the human's edits applied.
+	 */
+	public static function merge_edits( $preview ) {
+		if ( isset( $_POST['seo_title'] ) ) {
+			$title = trim( (string) sanitize_text_field( wp_unslash( $_POST['seo_title'] ) ) );
+			if ( '' !== $title ) {
+				$preview['seo_title'] = Haa_Util::cut( $title, 80 );
+			}
+		}
+
+		if ( isset( $_POST['seo_description'] ) ) {
+			$desc = trim( (string) sanitize_textarea_field( wp_unslash( $_POST['seo_description'] ) ) );
+			if ( '' !== $desc ) {
+				$preview['seo_description'] = Haa_Util::cut( $desc, 200 );
+			}
+		}
+
+		// An emptied slug field means "keep the model's slug".
+		if ( isset( $_POST['slug'] ) ) {
+			$slug = Haa_Util::slugify( (string) wp_unslash( $_POST['slug'] ) );
+			if ( '' !== $slug ) {
+				$preview['slug'] = $slug;
+			}
+		}
+
+		if ( isset( $_POST['html'] ) ) {
+			$html = (string) wp_unslash( $_POST['html'] );
+			if ( '' !== trim( $html ) ) {
+				$preview['html'] = $html;
+			}
+		}
+
+		// FAQ rows post as faq[][q] / faq[][a]; half-empty rows are dropped.
+		if ( isset( $_POST['faq'] ) && is_array( $_POST['faq'] ) ) {
+			$faq = array();
+			foreach ( $_POST['faq'] as $row ) {
+				$q = isset( $row['q'] ) ? trim( (string) sanitize_text_field( wp_unslash( $row['q'] ) ) ) : '';
+				$a = isset( $row['a'] ) ? trim( (string) sanitize_textarea_field( wp_unslash( $row['a'] ) ) ) : '';
+				if ( '' !== $q && '' !== $a ) {
+					$faq[] = array( 'q' => $q, 'a' => $a );
+				}
+			}
+			$preview['faq'] = array_slice( $faq, 0, 12 );
+		}
+
+		return $preview;
+	}
+
 	/** @return void */
 	public function handle_apply() {
 		Haa_Util::guard_admin_post( 'haai_pc' );
@@ -1336,6 +1532,10 @@ final class Haa_Module_Product_Content implements Haa_Module_Interface {
 		if ( ! is_array( $preview ) ) {
 			$this->back( $pid, __( 'پیش‌نمایشی برای اعمال نیست.', 'hami-ai-assistant' ) );
 		}
+
+		// The human edits win over the model — every preview field is editable
+		// and whatever is posted here is what gets applied.
+		$preview = self::merge_edits( $preview );
 
 		$applied = Haa_Seo::apply( $pid, $preview );
 

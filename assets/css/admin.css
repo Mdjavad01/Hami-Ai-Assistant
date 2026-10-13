@@ -423,6 +423,14 @@ body.haai-theme-dark .haai-wrap { --haai-canvas: #15181d; --haai-surface: #1b1e2
 .haai-filterbar input[type="search"] { flex: 1 1 180px; min-width: 0; }
 .haai-filterbar select { min-width: 120px; }
 
+/* One filter button opens a panel with the real selects inside. */
+.haai-dd { position: relative; display: inline-flex; }
+.haai-dd__n { display: inline-flex; align-items: center; justify-content: center; min-width: 18px; height: 18px; margin-inline-start: 6px; padding: 0 5px; border-radius: var(--haai-r-full); background: var(--haai-accent); color: #fff; font-size: 11px; line-height: 18px; }
+.haai-dd__panel { position: absolute; top: calc(100% + 6px); inset-inline-start: 0; z-index: 30; display: flex; flex-direction: column; gap: var(--haai-sp-3); width: 260px; padding: var(--haai-sp-3); background: var(--haai-surface); border: 1px solid var(--haai-border-strong); border-radius: var(--haai-r-md); box-shadow: var(--haai-sh-2); }
+.haai-dd__group { display: flex; flex-direction: column; gap: 4px; }
+.haai-dd__group > strong { font-size: 12px; color: var(--haai-muted); font-weight: var(--haai-fw-strong); }
+.haai-dd__group select { width: 100%; }
+
 .haai-selectionbar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--haai-sp-3); margin: 0 0 var(--haai-sp-2); padding: var(--haai-sp-2) var(--haai-sp-3); background: var(--haai-accent-soft); border-radius: var(--haai-r-md); font-size: 13px; }
 .haai-selectionbar__count { font-weight: var(--haai-fw-strong); color: var(--haai-accent); }
 
@@ -430,13 +438,21 @@ body.haai-theme-dark .haai-wrap { --haai-canvas: #15181d; --haai-surface: #1b1e2
 .haai-col-check { width: 34px; text-align: center; }
 .haai-prod-thumb { border-radius: var(--haai-r-sm); object-fit: cover; background: var(--haai-canvas); }
 .haai-prod-thumb.is-none { display: block; width: 44px; height: 44px; border: 1px dashed var(--haai-border-strong); }
-.haai-prod-title { max-width: 260px; }
+.haai-prod-title { min-width: 240px; }
+.haai-prod-title a { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-weight: var(--haai-fw-strong); }
 .haai-prod-meta { display: block; color: var(--haai-faint); font-size: 11px; }
+.haai-prod-desc { display: block; max-width: 340px; overflow: hidden; color: var(--haai-muted); font-size: var(--haai-fs-meta); text-overflow: ellipsis; white-space: nowrap; }
+.haai-prodtable tbody tr.is-open { background: var(--haai-accent-soft); }
+.haai-prodtable tbody tr.is-open td:first-child { box-shadow: inset 3px 0 0 var(--haai-accent); }
+.haai-prodtable tbody tr.is-selected { background: var(--haai-accent-soft); }
+.haai-prodtable .haai-badge { max-width: 150px; white-space: normal; line-height: 1.6; }
 .haai-dim { color: var(--haai-faint); }
 
 .haai-pager { display: flex; flex-wrap: wrap; align-items: center; gap: var(--haai-sp-2); margin: var(--haai-sp-3) 0 0; }
 .haai-pager .description { min-width: 60px; text-align: center; }
 .haai-pager.is-busy { opacity: .5; pointer-events: none; }
+.haai-pager__per { display: inline-flex; align-items: center; gap: 6px; margin: 0; color: var(--haai-muted); font-size: var(--haai-fs-meta); }
+.haai-pager__per select { margin: 0; }
 
 .haai-batch { padding: var(--haai-sp-3) var(--haai-sp-4); background: var(--haai-surface); border: 1px solid var(--haai-border); border-radius: var(--haai-r-md); box-shadow: var(--haai-sh-1); }
 .haai-batch > summary { padding: var(--haai-sp-1) 0; cursor: pointer; font-weight: var(--haai-fw-strong); font-size: var(--haai-fs-label); list-style: none; }
@@ -473,6 +489,40 @@ body.haai-theme-dark .haai-wrap { --haai-canvas: #15181d; --haai-surface: #1b1e2
 
 .haai-progress { height: 10px; max-width: 520px; margin: var(--haai-sp-3) 0 var(--haai-sp-2); background: var(--haai-canvas); border-radius: var(--haai-r-full); overflow: hidden; }
 .haai-progress__bar { height: 100%; width: 0; background: var(--haai-accent); border-radius: var(--haai-r-full); transition: width var(--haai-dur) var(--haai-ease); }
+
+/* --- 11. Preview editor (product-content screen) ------------------- */
+
+.haai-pvtitle { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--haai-sp-2); }
+
+.haai-pvform { display: grid; gap: var(--haai-sp-4); padding: var(--haai-sp-4); background: var(--haai-surface); border: 1px solid var(--haai-border); border-radius: var(--haai-r-md); box-shadow: var(--haai-sh-1); }
+
+.haai-pvmeta { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--haai-sp-3) var(--haai-sp-4); }
+
+.haai-count { margin: 2px 0 0; color: var(--haai-faint); font-size: 11px; }
+.haai-count.is-over { color: var(--haai-warn); }
+.haai-count--inline { margin: 0; margin-inline-start: auto; align-self: center; }
+
+.haai-pvedit { display: grid; gap: var(--haai-sp-2); }
+.haai-pvedit__tabs { display: flex; align-items: center; gap: var(--haai-sp-2); }
+.haai-pvedit__tabs .button.is-active { background: var(--haai-accent-soft); border-color: transparent; color: var(--haai-accent); }
+.haai-pvedit__pane[hidden] { display: none; }
+
+.haai-pv-frame { max-height: 460px; overflow: auto; padding: var(--haai-sp-4); background: #fff; border: 1px solid var(--haai-border); border-radius: var(--haai-r-md); color: var(--haai-ink); font-size: var(--haai-fs-body); line-height: 1.9; }
+.haai-pv-frame > :first-child { margin-top: 0; }
+.haai-pv-frame h2, .haai-pv-frame h3 { margin: var(--haai-sp-4) 0 var(--haai-sp-2); line-height: 1.5; }
+.haai-pv-frame p { margin: 0 0 var(--haai-sp-3); }
+.haai-pv-frame ul, .haai-pv-frame ol { margin: 0 0 var(--haai-sp-3); padding-inline-start: 1.4em; }
+.haai-pv-frame li { margin-bottom: 4px; }
+.haai-pv-frame img { max-width: 100%; height: auto; }
+.haai-pv-frame table { width: 100%; border-collapse: collapse; }
+.haai-pv-frame a { color: var(--haai-accent); }
+
+.haai-pv-src { width: 100%; min-height: 380px; padding: var(--haai-sp-3); background: var(--haai-canvas); border: 1px solid var(--haai-border-strong); border-radius: var(--haai-r-md); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace; font-size: 12.5px; line-height: 1.7; resize: vertical; }
+
+.haai-faq { display: grid; gap: var(--haai-sp-2); }
+.haai-faqrow { display: grid; grid-template-columns: minmax(200px, 1fr) minmax(0, 1.6fr) auto; gap: var(--haai-sp-2); align-items: start; }
+.haai-faqrow input, .haai-faqrow textarea { width: 100%; margin: 0; }
+.haai-faq__add { margin: 0; }
 
 /* --- 12. Remaining pieces of the existing screens */
 
@@ -663,6 +713,11 @@ body.haai-theme-dark .haai-wrap { --haai-canvas: #15181d; --haai-surface: #1b1e2
 	.haai-cards { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
 
 	.haai-wrap .nav-tab-wrapper .nav-tab { flex: 1 1 auto; text-align: center; }
+
+	/* Preview editor: FAQ rows stack under the fields. */
+	.haai-faqrow { grid-template-columns: 1fr; }
+	.haai-faqrow button { justify-self: start; }
+	.haai-dd__panel { width: min(260px, 80vw); }
 
 	/* Pipeline panels: stacked actions and a shorter scroller on small screens. */
 	.haai-review__actions { align-items: stretch; }
